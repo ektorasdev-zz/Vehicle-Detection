@@ -48,7 +48,7 @@ The final parameters used to extract hog features were spatial_size=(32, 32), hi
 
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
-I trained a linear SVC using the vehicles and non-vihecles images provided with the project, and with that i got a HOG accuracy of 95% and a color accuracy of 95%.
+I trained a linear SVC using the vehicles and non-vihecles images provided with the project, and with that i got a HOG accuracy of 95% and a color accuracy of 96%.
 
 ### Sliding Window Search
 
