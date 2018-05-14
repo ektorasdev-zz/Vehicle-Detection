@@ -30,34 +30,25 @@ The goals / steps of this project are the following:
 ---
 ### Writeup / README
 
-#### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one.  You can submit your writeup as markdown or pdf.  [Here](https://github.com/udacity/CarND-Vehicle-Detection/blob/master/writeup_template.md) is a template writeup for this project you can use as a guide and a starting point.  
-
-You're reading it!
-
 ### Histogram of Oriented Gradients (HOG)
 
 #### 1. Explain how (and identify where in your code) you extracted HOG features from the training images.
 
-The code for this step is contained in the first code cell of the IPython notebook (or in lines # through # of the file called `some_file.py`).  
+In order to extract HOG features in the images, i've implemented the get_hog_features() function from the class, which by providing parameters like orientation for information split, pixels_per_cell for the cell size, cell_per_block for the normalization we get the expected visualization.
 
-I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an example of one of each of the `vehicle` and `non-vehicle` classes:
+![title](./writeup_images/hog.PNG)
 
-![alt text][image1]
+To extract raw and normilzed features from an image i used the extract_features() function and by applying the bin_spatial() function, which computes the binned color features and the color_hist function, which computes the color histogram features, i returned a feature vector and by applying a scaler i extracted the raw and normilzed features of the image.
 
-I then explored different color spaces and different `skimage.hog()` parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).  I grabbed random images from each of the two classes and displayed them to get a feel for what the `skimage.hog()` output looks like.
-
-Here is an example using the `YCrCb` color space and HOG parameters of `orientations=8`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)`:
-
-
-![alt text][image2]
+![title](./images_results/raw_images.jpg)
 
 #### 2. Explain how you settled on your final choice of HOG parameters.
 
-I tried various combinations of parameters and...
+The final parameters used to extract hog features were spatial_size=(32, 32), hist_bins=32, orient = 9, pixels_per_cell = 8 and cell_per_block = 2.
 
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
-I trained a linear SVM using...
+I trained a linear SVC using the vehicles and non-vihecles images provided with the project, and with that i got a HOG accuracy of 95% and a color accuracy of 95%.
 
 ### Sliding Window Search
 
