@@ -40,7 +40,7 @@ In order to extract HOG features in the images, i've implemented the get_hog_fea
 
 To extract raw and normilzed features from an image i used the extract_features() function and by applying the bin_spatial() function, which computes the binned color features and the color_hist function, which computes the color histogram features, i returned a feature vector and by applying a scaler i extracted the raw and normilzed features of the image.
 
-![title](./images_results/raw_images.jpg)
+![title](./writeup_images/raw_images.PNG)
 
 #### 2. Explain how you settled on your final choice of HOG parameters.
 
@@ -54,9 +54,9 @@ I trained a linear SVC using the vehicles and non-vihecles images provided with 
 
 #### 1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
 
-I decided to search random window positions at random scales all over the image and came up with this (ok just kidding I didn't actually ;):
+To create the sliding window technique, i used the slide_window() function provided in class and applied parameters of start and stop position, window size and overlap fraction. I decided to limit the window search area to the bottom half of the image.
 
-![alt text][image3]
+![title](./writeup_images/sliding.PNG)
 
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
