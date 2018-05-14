@@ -78,7 +78,9 @@ Here's a [link to my video result](./project_1.mp4)
 
 #### 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
 
-In order to create the final pipeline, after some experimentation with many functions, i've decided to apply another students pipeline as this gave me the best possible results. I used jeremy-shannons code to create it because as he correctly mentions there will be different size and positions in every image so we need to apply different start/stop positions. Here's a link to jeremys code: https://github.com/jeremy-shannon/CarND-Vehicle-Detection/blob/master/vehicle_detection_project.ipynb
+In order to create the final pipeline, after some experimentation with many functions, i've decided to apply another students pipeline as this gave me the best possible results. I used jeremy-shannons code to create it because as he correctly mentions there will be different size and positions in every image so we need to apply different start/stop positions and scaling. Here's a link to jeremys code: https://github.com/jeremy-shannon/CarND-Vehicle-Detection/blob/master/vehicle_detection_project.ipynb
+
+Except from the start/stop positions and scaling, my values for orientation, pixel_per_cell, cell_per_block, spatial size and bins are different from shannons with values of 9, 16, 4, (16,16) and 16 respectively.
 
 ### Here are three frames and their corresponding heatmaps:
 
@@ -90,5 +92,6 @@ In order to create the final pipeline, after some experimentation with many func
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+The big issues i faced during the creation of this project, was with accurately classifying the cars. The techniques i used previously would classify trees, the sky and lane lines. Still with the technique i used now there are some minor issues here and there but the end result is much better than before.
+A potential improvement for the pipeline, would maybe be to improve the search window technique in order to identify cars more accurately or even apply neural networks which would probably give us an even better result.
 
