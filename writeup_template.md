@@ -60,15 +60,19 @@ To create the sliding window technique, i used the slide_window() function provi
 
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
-Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a nice result.  Here are some example images:
+In order to have the classifier working, i trained the features using the YCrCB channel, an orient of 9, pixel_per_cell of 16, cell_per_block of 4, an ALL hog_channel, a spatial_size of (16,16) and hist_bins of 16. The training with this parameters had a great result of 97.5%.
 
-![alt text][image4]
+In order to create the search_window i applied parameters for x and y start/stop positions, window size and overlap fraction of [730, None], [400, 500], (96,96), (0.5,0.5) respectively and the result seem to be fairly good.
+
+Here's an image of the result window:
+
+![title](./writeup_images/search_window.PNG)
 ---
 
 ### Video Implementation
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
-Here's a [link to my video result](./project_video.mp4)
+Here's a [link to my video result](./project_1.mp4)
 
 
 #### 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
